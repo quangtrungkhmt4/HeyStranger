@@ -14,45 +14,31 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "messages")
-public class Message extends AbstractModel {
-
+@Table(name = "access")
+public class Access extends AbstractModel {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "message_type")
-    private String message_type;
-
-    @Column(name = "message")
-    private String message;
-
-    @Column(name = "attachment_thumb_url")
-    private String attachment_thumb_url;
-
-    @Column(name = "attachment_url")
-    private String attachment_url;
+    @Column(name = "token")
+    private String token;
 
     @Column(name = "created_at")
     private String created;
-
-    @Column(name = "guid")
-    private String guid;
 
     @Column(name = "deleted_at")
     private String deleted;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "conversation_id")
-    @NotNull
-    @JsonIgnoreProperties(value = {"handler","hibernateLazyInitializer","fieldHandler"})
-    private Conversation conversation;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "sender_id")
+    @JoinColumn(name = "user_id")
     @NotNull
     @JsonIgnoreProperties(value = {"handler","hibernateLazyInitializer","fieldHandler"})
     private User user;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "device_id")
+    @NotNull
+    @JsonIgnoreProperties(value = {"handler","hibernateLazyInitializer","fieldHandler"})
+    private Device device;
 }

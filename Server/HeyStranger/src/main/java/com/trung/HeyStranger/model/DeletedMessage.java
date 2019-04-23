@@ -1,5 +1,6 @@
 package com.trung.HeyStranger.model;
 
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,43 +15,28 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "messages")
-public class Message extends AbstractModel {
+@Table(name = "deleted_messages")
+public class DeletedMessage extends AbstractModel {
 
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "message_type")
-    private String message_type;
-
-    @Column(name = "message")
-    private String message;
-
-    @Column(name = "attachment_thumb_url")
-    private String attachment_thumb_url;
-
-    @Column(name = "attachment_url")
-    private String attachment_url;
-
     @Column(name = "created_at")
     private String created;
 
-    @Column(name = "guid")
-    private String guid;
-
-    @Column(name = "deleted_at")
-    private String deleted;
+    @Column(name = "updated_at")
+    private String updated;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "conversation_id")
+    @JoinColumn(name = "message_id")
     @NotNull
     @JsonIgnoreProperties(value = {"handler","hibernateLazyInitializer","fieldHandler"})
-    private Conversation conversation;
+    private Message message;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "sender_id")
+    @JoinColumn(name = "user_id")
     @NotNull
     @JsonIgnoreProperties(value = {"handler","hibernateLazyInitializer","fieldHandler"})
     private User user;

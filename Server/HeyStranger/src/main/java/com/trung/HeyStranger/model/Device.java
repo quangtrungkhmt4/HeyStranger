@@ -14,36 +14,29 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "reports")
-public class Report extends AbstractModel {
+@Table(name = "devices")
+public class Device extends AbstractModel {
 
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "report_type")
-    private String report_type;
+    @Column(name = "type")
+    private String type;
 
-    @Column(name = "notes")
-    private String notes;
-
-    @Column(name = "status")
-    private String status;
+    @Column(name = "device_token")
+    private String device_token;
 
     @Column(name = "created_at")
     private String created;
+
+    @Column(name = "updated_at")
+    private String updated;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     @NotNull
     @JsonIgnoreProperties(value = {"handler","hibernateLazyInitializer","fieldHandler"})
     private User user;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "participant_id")
-    @NotNull
-    @JsonIgnoreProperties(value = {"handler","hibernateLazyInitializer","fieldHandler"})
-    private Participant participant;
-
 }

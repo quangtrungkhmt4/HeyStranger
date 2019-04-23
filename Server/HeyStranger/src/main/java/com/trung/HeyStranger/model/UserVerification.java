@@ -14,22 +14,15 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "reports")
-public class Report extends AbstractModel {
-
+@Table(name = "user_verification")
+public class UserVerification extends AbstractModel {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "report_type")
-    private String report_type;
-
-    @Column(name = "notes")
-    private String notes;
-
-    @Column(name = "status")
-    private String status;
+    @Column(name = "verification_code")
+    private String verification_code;
 
     @Column(name = "created_at")
     private String created;
@@ -39,11 +32,4 @@ public class Report extends AbstractModel {
     @NotNull
     @JsonIgnoreProperties(value = {"handler","hibernateLazyInitializer","fieldHandler"})
     private User user;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "participant_id")
-    @NotNull
-    @JsonIgnoreProperties(value = {"handler","hibernateLazyInitializer","fieldHandler"})
-    private Participant participant;
-
 }
