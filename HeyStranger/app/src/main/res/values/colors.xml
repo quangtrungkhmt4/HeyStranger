@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#1f7ccf</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="startBackground">#3795e8</color>
+    <color name="endBackground">#1f7ccf</color>
+    <color name="divider">#F1F1F1</color>
+    <color name="primary_text_input">#2F353D</color>
+    <color name="manatee">#B8BCC1</color>
+</resources>

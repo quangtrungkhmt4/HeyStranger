@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+    <View style="@style/view_horizontal_normal"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/imgAddPhoto"
+            style="@style/chat_button_bottom"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/photo" />
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/imgAddVideo"
+            style="@style/chat_button_bottom"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/video" />
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/imgAddIcon"
+            style="@style/chat_button_bottom"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/icon" />
+
+        <ImageView
+            android:id="@+id/imgAddMedia"
+            style="@style/chat_button_bottom"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/more_media_send" />
+
+        <EditText
+            android:id="@+id/edtChat"
+            style="@style/chat_input_bottom"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/height_edtext_chat"
+            android:layout_margin="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:hint="@string/chat_hint"
+            android:inputType="textMultiLine"
+            android:maxLines="3"
+            android:paddingLeft="@dimen/space_extreme"
+            android:paddingTop="5dp"
+            android:paddingRight="@dimen/space_extreme"
+            android:paddingBottom="5dp"
+            android:singleLine="false" />
+
+        <ImageView
+            android:id="@+id/btnSendChat"
+            style="@style/button_chat_call"
+            android:scaleType="centerInside"
+            android:src="@drawable/btn_send"
+            android:visibility="visible" />
+    </LinearLayout>
+
+</LinearLayout>

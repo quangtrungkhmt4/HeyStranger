@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">HeyStranger</string>
+    <string name="chat_hint">Enter typing...</string>
+    <string name="empty_string"></string>
+</resources>
