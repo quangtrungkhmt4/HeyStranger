@@ -8,6 +8,7 @@
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPagerBanner"
+        android:background="@color/manatee"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginTop="5dp"
         app:layout_constraintRight_toRightOf="parent"

@@ -1,5 +1,6 @@
 package com.benjamin.heystranger.adapter;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -12,35 +13,45 @@ import androidx.viewpager.widget.PagerAdapter;
 
 import com.benjamin.heystranger.R;
 import com.benjamin.heystranger.model.Banner;
+import com.bumptech.glide.Glide;
 
 import java.util.List;
 
 public class BannerAdapter extends PagerAdapter {
 
-    private Activity context;
+    private Context context;
     private List<Banner> banners;
+    private LayoutInflater inflate;
 
-    public BannerAdapter(Activity context, List<Banner> banners) {
+    public BannerAdapter(Context context, List<Banner> banners) {
         this.context = context;
         this.banners = banners;
+        inflate = LayoutInflater.from(context);
     }
 
     @NonNull
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
-        LayoutInflater inflater = context.getLayoutInflater();
-        View viewItem = inflater.inflate(R.layout.banner_layout, container, false);
-        ImageView imageView = viewItem.findViewById(R.id.imgBanner);
-
+        View imageLayout = inflate.inflate(R.layout.banner_layout, container, false);
+        ImageView imageView = imageLayout.findViewById(R.id.imgBanner);
+//        imageView.setImageResource(R.drawable.select_image);
+        Glide.with(context).load(banners.get(position).getUrl()).into(imageView);
+        container.addView(imageLayout, 0);
+        return imageLayout;
     }
 
     @Override
     public int getCount() {
-        return 0;
+        return banners.size();
     }
 
     @Override
     public boolean isViewFromObject(@NonNull View view, @NonNull Object object) {
-        return false;
+        return view.equals(object);
+    }
+
+    @Override
+    public void destroyItem(ViewGroup container, int position, Object object) {
+        container.removeView((View) object);
     }
 }
