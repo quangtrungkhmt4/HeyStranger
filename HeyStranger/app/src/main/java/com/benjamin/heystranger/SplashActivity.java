@@ -28,7 +28,7 @@ public class SplashActivity extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-                startActivity(new Intent(SplashActivity.this, ChatActivity.class));
+                startActivity(new Intent(SplashActivity.this, TopActivity.class));
             }
         };
         timer.start();
