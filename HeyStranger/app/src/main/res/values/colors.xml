@@ -8,4 +8,8 @@
     <color name="divider">#F1F1F1</color>
     <color name="primary_text_input">#2F353D</color>
     <color name="manatee">#B8BCC1</color>
+    <color name="bubble_friend_message">#DDE1E6</color>
+    <color name="text_time">#85868A</color>
+    <color name="chat_receive">#2F353D</color>
+    <color name="chat_sent">@android:color/white</color>
 </resources>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/avatarFriendChat"
+        style="@style/image_chat_receiver_default"
+        android:layout_marginTop="5dp"/>
+
+    <TextView
+        android:id="@+id/message"
+        style="@style/message_chat_receive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/space_larger"
+        android:background="@drawable/bubble_friend_message"
+        android:maxWidth="@dimen/max_width_item_chat"
+        tools:text="Content message" />
+
+    <TextView
+        android:id="@+id/msgReceiveStatus"
+        style="@style/time_chat_receiver"
+        tools:text="00:00" />
+</LinearLayout>

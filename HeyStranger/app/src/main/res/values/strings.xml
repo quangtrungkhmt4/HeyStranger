@@ -16,4 +16,5 @@
     <string name="password_confirm">Confirm password...</string>
     <string name="birth">Birthday...</string>
     <string name="searching">Searching...</string>
+    <string name="seen">Seen</string>
 </resources>

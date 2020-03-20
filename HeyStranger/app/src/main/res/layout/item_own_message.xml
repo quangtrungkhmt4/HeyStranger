@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="right|bottom"
+    android:orientation="horizontal"
+    tools:ignore="RtlHardcoded">
+
+    <include
+        layout="@layout/status_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginEnd="@dimen/space_small"
+        android:layout_marginRight="@dimen/space_small" />
+
+    <TextView
+        android:id="@+id/messageSend"
+        style="@style/message_chat_send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bubble_own_message"
+        android:maxWidth="@dimen/max_width_item_chat"
+        tools:text="Content message" />
+
+</LinearLayout>
